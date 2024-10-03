@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Assignment3</string>
+    <string name="student_info">Student Info</string>
+    <string name="username">Username</string>
+    <string name="student_id">Student ID</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="submit">Submit</string>
+    <string name="login">Login</string>
+</resources>

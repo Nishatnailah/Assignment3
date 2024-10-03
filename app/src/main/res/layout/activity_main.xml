@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:background="@drawable/img"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tv_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/login"
+        android:textSize="32sp"
+        android:layout_marginBottom="20dp"
+        android:textStyle="bold"/>
+
+    <LinearLayout
+        android:id="@+id/input_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+         >
+
+        <EditText
+            android:id="@+id/et_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/username"
+            android:textSize="24sp"
+            android:layout_marginBottom="10dp"
+            android:inputType="text"
+            android:padding="20dp"
+            android:background="@android:drawable/button_onoff_indicator_off"
+            />
+
+        <EditText
+            android:id="@+id/et_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/email"
+            android:textSize="24sp"
+            android:layout_marginBottom="10dp"
+            android:inputType="textEmailAddress"
+            android:padding="20dp"
+            android:background="@android:drawable/button_onoff_indicator_off"
+            />
+        <EditText
+            android:id="@+id/et_pass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:hint="@string/password"
+            android:textSize="24sp"
+            android:inputType="textPassword"
+            android:padding="20dp"
+            android:background="@android:drawable/button_onoff_indicator_off"
+
+            />
+
+        <Spinner
+            android:id="@+id/et_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:spinnerMode="dropdown"
+            />
+
+        <Button
+            android:id="@+id/submit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/submit"
+            android:backgroundTint="#3B6B71"
+            />
+
+    </LinearLayout>
+    
+    <LinearLayout
+        android:id="@+id/output_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/img"
+        android:padding="20dp"
+        android:visibility="gone"
+
+        >
+        <TextView
+            android:id="@+id/output"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
+            />
+
+
+</LinearLayout>
+    </LinearLayout>
+
+
+
