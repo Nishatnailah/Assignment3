@@ -17,18 +17,18 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import java.util.Objects;
 import java.util.regex.Pattern;
 
 public class MainActivity extends AppCompatActivity {
 
-    private EditText et_username,et_email,et_password;
+    private EditText et_username,et_email,et_password,et_Conpass;
     private Spinner et_spinner;
-    private String username,student_id,email,pass,choco;
+    private String username,email,pass,choco,conpass;
     private Button submit;
     private Pattern et_usernamePattern = Pattern.compile("[a-z A-Z._]+");
     private Pattern et_emailPattern=Pattern.compile("[a-zA-Z\\d._%+-]+@(gmail|yahoo)\\.com");
     private Pattern et_passwordPattern=Pattern.compile("[a-zA-Z\\d]+");
+    private Pattern et_conpasspattern=Pattern.compile("[a-zA-Z\\d]+");
     private LinearLayout input_layout,output_layout;
     private TextView tv_login,output;
 
@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         et_username=findViewById(R.id.et_username);
         et_email=findViewById(R.id.et_email);
         et_password=findViewById(R.id.et_pass);
+        et_Conpass=findViewById(R.id.et_Conpass);
         et_spinner = findViewById(R.id.et_spinner);
         submit=findViewById(R.id.submit);
         input_layout=findViewById(R.id.input_layout);
@@ -74,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
                 username = et_username.getText().toString();
                 email = et_email.getText().toString();
                 pass = et_password.getText().toString();
+                conpass = et_Conpass.getText().toString();
 
 
 
@@ -93,12 +95,16 @@ public class MainActivity extends AppCompatActivity {
                 } else if (pass.isEmpty()) {
                     et_password.setError("Empty!!");
                     et_password.requestFocus();
-                } else if (!et_passwordPattern.matcher(pass).matches()){
-                        et_password.setError("Name can be only Alphabet");
-                        et_password.requestFocus();
+                } else if (!et_passwordPattern.matcher(pass).matches()) {
+                    et_password.setError("Invalid password!!");
+                    et_password.requestFocus();
 
-                } else if (Objects.equals(choco, "Select chocolates ")){
-                    Toast.makeText(getApplicationContext(), "Please Select Chocolates", Toast.LENGTH_SHORT).show();
+                } else if (!pass.equals(conpass)) {
+                    et_Conpass.setError("Passwords do not match!");
+                    et_Conpass.requestFocus();
+
+                } else if (choco.equals("Select ")) {
+                    Toast.makeText(getApplicationContext(), "Please Select Chocolates!!", Toast.LENGTH_SHORT).show();
                 } else {
                     input_layout.setVisibility(View.GONE);
                     output_layout.setVisibility(View.VISIBLE);

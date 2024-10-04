@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -49,18 +50,52 @@
             android:padding="20dp"
             android:background="@android:drawable/button_onoff_indicator_off"
             />
-        <EditText
-            android:id="@+id/et_pass"
+
+
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:hint="@string/password"
-            android:textSize="24sp"
-            android:inputType="textPassword"
-            android:padding="20dp"
-            android:background="@android:drawable/button_onoff_indicator_off"
+            app:passwordToggleEnabled="true"
+            android:textColorHint="#9B9494"
 
-            />
+
+
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_pass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Password"
+                android:textSize="24sp"
+                android:layout_marginBottom="10dp"
+                android:inputType="textPassword"
+                android:padding="20dp"
+                android:background="@android:drawable/button_onoff_indicator_off"
+
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:passwordToggleEnabled="true"
+            android:textColorHint="#9B9494"
+
+
+
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_Conpass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/confirm_password"
+                android:textSize="24sp"
+                android:layout_marginBottom="10dp"
+                android:inputType="textPassword"
+                android:padding="20dp"
+                android:background="@android:drawable/button_onoff_indicator_off"
+
+                />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <Spinner
             android:id="@+id/et_spinner"
